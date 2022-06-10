@@ -4,6 +4,7 @@
     font-size: 50px;
 }
 
+
 * , *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -83,5 +84,51 @@ h1, p {
     text-align: center;
 }
 #fotosPlatos  {
-    
+    margin: 2vw 4vw;
+    /*border-bottom: black;*/
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    row-gap: 0.5rem; 
+    column-gap: 0.5rem; 
+}
+.menu {
+    text-align: center;
+    border-top-style: groove;
+}
+#listaMenu {
+    text-align: center;
+    list-style: none;
+    margin: 5vw;
+}
+#listaMenu li{
+    clear: both;
+    margin: 0;
+    padding: 0 0 1.8em 0;
+    position: relative;
+    border-bottom: dotted 2px #999;
+}
+#listaMenu strong{
+    position: absolute;
+    bottom: -.3em;
+    left: 0;
+    font-weight: normal;
+}
+#listaMenu em{
+    position: relative;
+    padding: 0 0 0 5px;
+    font: 110%/100% Georgia, "Times New Roman", Times, serif;
+    position: absolute;
+    bottom: -.2em;
+    right: 0;
+}
+.subItem {
+    left: 5vw !important;
+}
+#ubicacionHorario {
+    border-top-style: groove;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
 }
