@@ -146,15 +146,40 @@
             </section>
             <section class="horario">
                 <h2>Horario</h2>
+                <table id="tabla">
+                    <tr>                       
+                        <td class="tbsombra" id="tbcabecera" colspan="2">Lunes-Sabado</t>
+                    </tr>
+                    <tr>
+                        <td class="tbsombra">Desayunos</td>
+                        <td>07:00-12:00</td>
+                    </tr>
+                    <tr>
+                        <td class="tbsombra">Almuerzos</td>
+                        <td>12:00-15:30</td>
+                    </tr>
+                    <tr>
+                        <td class="tbsombra">Piqueos</td>
+                        <td>15:30-22:30</td>
+                    </tr>
+                </table>
                 
             </section>
         </div>
-        <div>
+        <div id="videoForm">
             <section class="video">
-
+                <video id="objvideo" controls="yes">
+                    <source src="video.mp4" type="video/mp4">
+                  </video>                  
             </section>
             <section class="formulario">
-
+                <h2>Formulario</h2>
+                <form id="formulario">
+                    <input type="text" placeholder="Nombre"></label><br>
+                    <input type="email" placeholder="Correo"></label><br>
+                    <textarea name="textarea" rows="3" cols="79" placeholder="Comentarios"></textarea><br>
+                    <button id="Enviar" type="button">Enviar</button>
+                </form>
             </section>
         </div>
     </div>
