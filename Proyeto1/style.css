@@ -15,11 +15,24 @@ img {
     max-width: 30%;
     height: auto;
     display: block;
+   
+    
+
 }
 video {
     max-width: 100%;
     height: auto;
     display: block;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    
+    text-shadow: 1px 1px 2px black;
+    color: #5b32cc;   
+    text-decoration: underline; 
 }
 body {
     margin: 0px;
@@ -29,8 +42,11 @@ body {
 
 .banner { 
     background-color: #FEB50F;
+    max-height: 20vh;
 }
-
+#logo {
+    max-height: 20vh;
+}
 header {    
     display: grid;
     grid-auto-flow: column;    
@@ -42,7 +58,8 @@ header {
 
 
 .indice {
-    background-color: #003087;    
+    background-color: #003087;  
+    display: flex; 
 }
 
 .indice ul > li{
@@ -59,8 +76,11 @@ header {
     flex-direction: row;
     justify-content: space-evenly;
     list-style-type: none;
+    flex-wrap: wrap;
 }
-
+.indice ul li a{
+    font-size: 4vw ;
+}
 .navLink {
     display: flex;
     flex-direction: row;
@@ -136,7 +156,7 @@ h1, p {
     flex-direction: row;
     column-gap: 0.5rem;    
 }
-.ubicacion {
+#ubicacion {
     padding-left: 0.2rem;
 }
 
