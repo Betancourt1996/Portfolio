@@ -1,4 +1,53 @@
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width: 320px) {
-    /* Styles */
+@media only screen and (max-width: 360px) {
+    /* Styles */    
+    h1, h2{
+      padding-top: 3%;
+      
+    }
+    #fotosPlatos  {
+      margin: 2vw 4vw;    
+      display: flex; 
+      justify-content: space-between; 
+      flex-wrap: wrap; 
+      flex-direction: column;      
+      row-gap: 0.5rem; 
+      column-gap: 0.5rem; 
+      align-content: center;
+  }
+  #fotosPlatos  img{
+    
+    max-width: 80% ;
+  }
+  #fotosPlatos img:nth-of-type(2n){
+    
+    display: none;
+  }
+  #ubicacionHorario{
+    display: flex;
+    flex-direction: column;
+  }
+  #videoForm{
+    display: flex;
+    flex-direction: column;
+  }
+  #objvideo{
+    width: auto;
+  }
+  .video{
+    width: 100% ;
+
+  }
+  .formulario{
+    width: auto;
+    align-content: center;
+    
+  }
+  #formulario{
+    max-width: 100%;
+  }
+  #formulario input{
+    width:  100%;
+  }
+  
   }

@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     font-family:  Inter,-apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
-    font-size: 50px;
+    font-size: 4vw;
 }
 
 
@@ -9,6 +9,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    
     }
 
 img {
@@ -78,28 +79,33 @@ header {
     list-style-type: none;
     flex-wrap: wrap;
 }
-.indice ul li a{
-    font-size: 4vw ;
-}
+
 .navLink {
     display: flex;
     flex-direction: row;
 
 }
+.navLink svg{
+    width: 1rem;
+    height: 1rem;
+}
 .navLink p{
         padding: 2vh;
 }
-h1, p {
+h1, h2,p {
     margin: 0px;
+}
+h1,h2 {
+    font-size: 1.5rem;
 }
 .descripcion {
     background-color: #C8102E;
     color: white;
     text-align: center;
-    padding: 1em;
+    padding: 0.5vw;
 }
 .descripcion  h1 {
-    padding-bottom: 0.5em;
+    padding-bottom: 0.5vw;
 }
 /*.descripcion > p{
     word-spacing: 0.25em;
@@ -108,13 +114,16 @@ h1, p {
     text-align: center;
 }
 #fotosPlatos  {
-    margin: 2vw 4vw;
-    /*border-bottom: black;*/
+    margin: 2vw 4vw;    
     display: flex; 
     justify-content: space-between; 
     flex-wrap: wrap; 
     row-gap: 0.5rem; 
     column-gap: 0.5rem; 
+}
+#fotosPlatos img{
+    border-radius: 2%;
+    box-shadow: 0 0 2px 0 rgb(15, 15, 15);
 }
 .menu {
     text-align: center;
@@ -150,16 +159,32 @@ h1, p {
     left: 5vw !important;
 }
 #ubicacionHorario {
+    display: grid;
+    justify-content: space-between; 
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 1;
     border-top-style: groove;
     text-align: center;
-    display: flex;
+
     flex-direction: row;
     column-gap: 0.5rem;    
 }
-#ubicacion {
-    padding-left: 0.2rem;
+#ubicacionHorario h2{
+    padding-bottom: 0.2rem;
 }
-
+#ubicacion iframe{
+    padding-left: 0.5rem;
+    max-width: 100%;
+    min-height: 75% ;
+    min-width: 100%;
+    max-height:100%;
+}
+.horario{
+    padding-bottom: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 table, th, td{
     border: 1px solid;
     padding: 0.2rem;
@@ -173,33 +198,59 @@ table {
 }
 #tbcabecera {
     text-align: right;
+    padding-right: 2rem;
 }
 
 #videoForm {
+    display: grid;
+    justify-content: space-between; 
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 1;
+    /*flex-wrap: wrap; */
     border-top-style: groove;
     text-align: center;
-    display: flex;
+
     flex-direction: row;
-    column-gap: 0.5rem;    
+    column-gap: 0.5rem;     
 }
 
-.video {
+.video {    
     position: relative;
     display: flex;
+    flex-direction: column;
     width: max-content;
     height: max-content;
     justify-content: center;
     align-items: center;
     padding: 0.2rem;
+     
 }
 #objvideo {
     width: 44vw;
 }
+.formulario h2{
+    margin-bottom: 0.2rem;
+}
+#formulario{
+ max-width: 90%;  
+  
+}
+#formulario input{
+    margin-bottom: 0.1rem;
+    max-width: 100%;  
+}
+#formulario textarea {    
+  width: 100%;
+  height: 5em;
+  
+  box-sizing: border-box;
+  
 
-#formulario textarea {
-    font-size: 0.3em;
+  background-color: #f8f8f8;
+  
 }
 #formulario button {
     background-color: #1b4ca8cc;
     color: white;
+    border-radius: 10%;
 }
