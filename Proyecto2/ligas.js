@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarSelect();
     cargarTabla();
     interaccionTabla();
+    
 }
 )
 let cargarSelect = () => {
@@ -44,7 +45,8 @@ let cargarTabla = (idLiga=id_default) => {
             const data = await response.json();
             
             posiciones = data.data.standings
-            
+            let tableGraf=document.getElementById("grafBarras");
+            tableGraf.innerHTML ="";
             let rank = 0
             posiciones.forEach((posicione) => {
                 
@@ -55,14 +57,29 @@ let cargarTabla = (idLiga=id_default) => {
                 rank++;
                 let plantilla = `
                 <tr>
-                <th scope="row">${rank}</th>
-                <td>${equipo}</td>
-                <td>${pj}</td>
-                <td>${g}</td>
-                <td>${pt}</td>
+                <th class="tbpos" scope="row">${rank}</th>
+                <td class="tbclub">${equipo}</td>
+                <td class="tbpj">${pj}</td>
+                <td class="tbg">${g}</td>
+                <td class="tbpt">${pt}</td>
                 </tr>
                 `
                 tableBody.innerHTML += plantilla;
+                
+
+                
+                let perdidos=pj-g
+                let porcGanados=g/pj
+                let porcPerdidos=perdidos/pj
+                let plantillaGraf=`
+                <tr class="table-primary">
+                <td scope="col"  style="--size:${porcGanados}; --color:rgba(38, 193, 0, 0.8)">${g}</th>
+                <td scope="col"  style="--size:${porcPerdidos}; --color:rgba(214, 0, 0, 0.8)">${perdidos}</th>
+              </tr>
+                
+                `
+                tableGraf.innerHTML+=plantillaGraf;
+                //<td scope="col">${perdidos}</th>
             });
 
 
@@ -83,3 +100,4 @@ let interaccionTabla=()=>{
     })
 
 }
+
