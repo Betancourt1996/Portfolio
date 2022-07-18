@@ -98,6 +98,7 @@ let interaccionTabla = () => {
         nameLiga.innerText = select.options[select.selectedIndex].textContent
         cargarTabla(select.value);
         cargarSeasons(select.value,seasons.value)
+        cargarLogo(select.value);
 
     });
     seasons.addEventListener('change', () => {
@@ -133,3 +134,21 @@ let cargarSeasons = (nliga="arg.1",temporada="2020") => {
     })();
 }
 
+let cargarLogo = (idLiga)=>{
+    (async () => {
+        try {
+            let logo = document.getElementById("logo")
+            logo.innerHTML = "";
+            const response = await fetch("https://api-football-standings.azharimm.site/leagues/"+idLiga);
+            const data = await response.json();
+            logoUrl = data.data.logos.light
+            logo.innerHTML=`
+            <img src=${logoUrl} alt="logo" class="img-fluid">
+            `
+
+
+        } catch (err) {
+            console.error(err);
+        }
+    })();
+}
