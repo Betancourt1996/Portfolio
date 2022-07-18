@@ -80,7 +80,6 @@ let cargarTabla = (idLiga = id_default,anho="2022") => {
                 
                 `
                 tableGraf.innerHTML += plantillaGraf;
-                //<td scope="col">${perdidos}</th>
             });
             totalEquipos=document.getElementById("totalEquipos")
             totalEquipos.innerText=rank;
