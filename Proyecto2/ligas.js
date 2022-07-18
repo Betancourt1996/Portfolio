@@ -99,14 +99,10 @@ let interaccionTabla = () => {
         cargarTabla(select.value);
         cargarSeasons(select.value,seasons.value)
 
-    })
+    });
     seasons.addEventListener('change', () => {
-        nameLiga = document.getElementById("NombreLiga");
-        nameLiga.innerText = select.options[select.selectedIndex].textContent
-        cargarTabla(select.value,seasons.value);
-        cargarSeasons(select.value,seasons.value)
-
-    })
+        cargarTabla(select.value,seasons.value);        
+    });
 
 }
 
@@ -120,7 +116,7 @@ let cargarSeasons = (nliga="arg.1",temporada="2020") => {
             const response = await fetch("https://api-football-standings.azharimm.site/leagues/" +nliga+ "/seasons");
             const data = await response.json();
             temp = data.data.seasons
-            console.log(temp)
+            
             temp.forEach((liga) => {
                 
                 anho=liga.year
