@@ -1,0 +1,32 @@
+<mat-toolbar color="primary" class="shadow ">
+    <mat-toolbar-row>
+        <span class="titulo">Generos</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+<div class="row">
+    <mat-grid-list cols="2" rowHeight="100px">
+        <mat-grid-tile class="card photo " 
+        *ngFor="let genero of generos" 
+        [colspan]="1"
+        [rowspan]="1"
+        
+        [ngStyle]="{
+                'border':'solid #B097DA',
+                'background-repeat':'  no-repeat'}"
+        >
+        <ng-container  >
+            <img [src]="genero.url" class="img-fluid mx-auto d-block" routerLink="/peliculas"/>
+          </ng-container>
+          
+          <mat-grid-tile-footer routerLink="/peliculas">
+            {{genero.nombre}}
+        </mat-grid-tile-footer>
+        </mat-grid-tile>
+        
+    </mat-grid-list>
+</div>
+
+<app-nav-bottom></app-nav-bottom>

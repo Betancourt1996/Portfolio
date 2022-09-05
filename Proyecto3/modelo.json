@@ -1,0 +1,84 @@
+{
+    "model": {
+        "type": "Object",
+        "value": {
+            "id": {
+                "type": "incrementNumber",
+                "options": {
+                    "from": 50
+                }
+            },
+            "poster":{
+                "type": "faker",
+                "value":"image.abstract"
+            },
+            "genero":{
+                "type": "randomNumberBetween",
+                "value": [
+                    1,
+                    9
+                ]
+            }
+            ,
+            "titulo": {
+                "type": "faker",
+                "value": "lorem.words"
+            },
+            "fechaEstreno": {
+                "type": "faker",
+                "value": "date.between",
+                "options": [
+                    "1950-01-01",
+                    "2000-12-29"
+                ]
+            },
+            "sinopsis": {
+                "type": "faker",
+                "value": "lorem.paragraph"
+            },
+            "director": {
+                "type": "Object",
+                "value": {
+                    "firstName": {
+                        "type": "faker",
+                        "value": "name.firstName"
+                    },
+                    "lastName": {
+                        "type": "faker",
+                        "value": "name.lastName"
+                    }
+                }
+            },
+            "valoracion": {
+                "type": "randomNumberBetween",
+                "value": [
+                    1,
+                    10
+                ]
+            },
+            "critica": {
+                "type": "Object",
+                "value": {
+                    "idCritica": {
+                        "type": "incrementNumber",
+                        "options": {
+                            "from": 1
+                        }
+                    },
+                    "idUsuario": {
+                        "type": "randomNumberBetween",
+                        "value": [
+                            1,
+                            10
+                        ]
+                    },
+                  
+                    "contenido":{
+                        "type": "faker",
+                        "value": "lorem.paragraph"
+                    }
+                }
+            }
+        }
+    }
+}

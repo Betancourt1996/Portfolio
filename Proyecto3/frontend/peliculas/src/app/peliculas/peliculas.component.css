@@ -1,0 +1,14 @@
+.titulo{
+    padding-left: 2%;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+img{
+    
+    border-style: dashed solid;
+    border-color: rgb(61, 65, 68);
+    height: auto;
+    width: 100%;
+
+}
