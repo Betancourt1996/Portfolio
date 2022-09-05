@@ -19,6 +19,10 @@ urlpatterns = [
     path('usuarios/<int:pk>/', views.UsuarioDetail.as_view(), name = "usuariosdetails"),
     path('peliculas/', views.peliculas, name = "peliculas"),
     path('peliculas/<int:pk>/', views.peliculasDetails, name = "peliculasdetails"),
-    path('peliculas/valoracion/<int:pk>', views.peliculasOrden, name = "peliculasOrden"),
+    path('peliculas/genero/<int:pk>', views.peliculasGenero, name = "peliculasGenero"),
+
+    path('opinions/', views.OpinionsList.as_view(), name = "opinions"),
+    path('peliculas/opinion/<int:pk>', views.peliculasOpinion, name = "peliculasOpinion"),
+    path('peliculas/random/', views.peliculasRandom, name = "peliculasRandom"),
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)

@@ -20,3 +20,14 @@ class Usuarios(models.Model):
     class Meta:
         managed = False
         db_table = 'usuarios'
+
+
+
+class Opinions(models.Model):
+    nombre = models.CharField(max_length=255, blank=True, null=True)
+    createdAt = models.DateTimeField(db_column='createdAt')  # Field name made lowercase.
+    updatedAt = models.DateTimeField(db_column='updatedAt')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'opinions'

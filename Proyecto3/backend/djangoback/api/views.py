@@ -7,9 +7,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.http import Http404
 from rest_framework import status
-from .models import Generos,Usuarios
-from .serializers import GenerosSerializer,UsuariosSerializer
-
+from .models import Generos, Opinions,Usuarios
+from .serializers import GenerosSerializer, OpinionsSerializer,UsuariosSerializer
+import random
 # Create your views here.
 # Create your views here.
 def index(request):
@@ -125,9 +125,37 @@ def peliculasDetails(request,pk):
     data = json.loads(text)
     return JsonResponse(data)
 
-def peliculasOrden(request,pk):
-    url = requests.get("https://peliculas-84e27-default-rtdb.firebaseio.com/peliculas.json?orderBy=%22valoracion%22&equalTo="+str(pk))
+def peliculasGenero(request,pk):
+    url = requests.get("https://peliculas-84e27-default-rtdb.firebaseio.com/peliculas.json?orderBy=%22genero%22&equalTo="+str(pk))
+    text = url.text
+    data = json.loads(text)
+    data2=[]
+    for key  in data.keys():
+        data2.append(data[key])    
+    return JsonResponse(data2,safe=False)
+
+class OpinionsList(APIView):
+    #GET list 
+    def get(self, request, format=None):
+       #Obtener todos los datos
+       opinions = Opinions.objects.all().order_by("id")
+       #many=true, devolver  arreglo json
+       serializer = OpinionsSerializer(opinions,many=True)
+       #return JsonResponse(serializer.data,safe=False)
+       return Response(serializer.data)
+
+def peliculasOpinion(request,pk):
+    url = requests.get("https://peliculas-84e27-default-rtdb.firebaseio.com/peliculas.json?orderBy=%22opinion%22&equalTo="+str(pk))
+    text = url.text
+    data = json.loads(text)
+    data2=[]
+    for key  in data.keys():
+        data2.append(data[key])    
+    return JsonResponse(data2,safe=False)
+
+def peliculasRandom(request):
+    random_number = random.randint(0, 999)
+    url = requests.get("https://peliculas-84e27-default-rtdb.firebaseio.com/peliculas/"+str(random_number)+".json")    
     text = url.text
     data = json.loads(text)
     return JsonResponse(data,safe=False)
-

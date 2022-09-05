@@ -18,6 +18,13 @@
                     1,
                     9
                 ]
+            },
+            "opinion":{
+                "type": "randomNumberBetween",
+                "value": [
+                    1,
+                    5
+                ]
             }
             ,
             "titulo": {
@@ -48,13 +55,6 @@
                         "value": "name.lastName"
                     }
                 }
-            },
-            "valoracion": {
-                "type": "randomNumberBetween",
-                "value": [
-                    1,
-                    10
-                ]
             },
             "critica": {
                 "type": "Object",

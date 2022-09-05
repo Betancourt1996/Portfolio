@@ -1,0 +1,44 @@
+<mat-toolbar color="primary" class="shadow ">
+    <mat-toolbar-row>
+        <span class="titulo">Generos</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="row justify-content-center" >
+    <div class="col-8 text-center pt-5" >
+        <p class="fs-1 fw-bold text-dark">Pelicula Destacada</p>
+
+
+        <!-- ========== Start Section ========== -->
+        <div class="card"  >
+            <div class="card-body bg-primary">
+                <div class="row">
+                    <div class="col-4 align-self-center">
+                        
+                        <img src={{peliculas[0].poster}} class="img-fluid  align-items-center">
+                    </div>
+                    <div class="col-8">
+                        <h2 class="card-title primary">{{peliculas[0].titulo}}</h2>
+                        <p class="card-text">{{peliculas[0].sinopsis}}</p>
+                        <div *ngIf="peliculas[0].opinion==1"><strong>Opinion: </strong>Excelente</div>
+                        <div *ngIf="peliculas[0].opinion==2"><strong>Opinion: </strong>Muy Buena</div>
+                        <div *ngIf="peliculas[0].opinion==3"><strong>Opinion: </strong>Buena</div>
+                        <div *ngIf="peliculas[0].opinion==4"><strong>Opinion: </strong>Mala</div>
+                        <div *ngIf="peliculas[0].opinion==5"><strong>Opinion: </strong>Muy Mala</div>
+                        <p class="card-text"><strong>Fecha Estreno: </strong>{{peliculas[0].fechaEstreno}}</p>
+                        
+                    </div>
+                </div>
+        
+              </div>
+        </div>
+        <!-- ========== End Section ========== -->
+
+    </div>
+
+</div>
+
+
+
+
+<app-nav-bottom></app-nav-bottom>

@@ -9,7 +9,7 @@
 <div class="row">
     <mat-grid-list cols="2" rowHeight="100px">
         <mat-grid-tile class="card photo " 
-        *ngFor="let genero of generos" 
+        *ngFor="let genero of listaGeneros" 
         [colspan]="1"
         [rowspan]="1"
         
@@ -21,7 +21,7 @@
             <img [src]="genero.url" class="img-fluid mx-auto d-block" routerLink="/peliculas"/>
           </ng-container>
           
-          <mat-grid-tile-footer routerLink="/peliculas">
+          <mat-grid-tile-footer routerLink="/peliculas/genero/{{genero.id}}">
             {{genero.nombre}}
         </mat-grid-tile-footer>
         </mat-grid-tile>

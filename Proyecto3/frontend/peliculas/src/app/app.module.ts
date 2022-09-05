@@ -19,6 +19,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { PeliculasComponent } from './peliculas/peliculas.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { HttpClientModule } from '@angular/common/http';
+import { OpinionComponent } from './opinion/opinion.component';
+import { MesComponent } from './mes/mes.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { PerfilComponent } from './perfil/perfil.component';
     GenerosComponent,
     NavBottomComponent,
     PeliculasComponent,
-    PerfilComponent
+    PerfilComponent,
+    OpinionComponent,
+    MesComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     MatListModule,
     MatSidenavModule,
     MatGridListModule,
-    ScrollingModule
+    ScrollingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

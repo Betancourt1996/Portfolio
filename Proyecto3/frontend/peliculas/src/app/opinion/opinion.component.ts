@@ -9,12 +9,12 @@ export interface pelicula {
   rating: number;
 }
 @Component({
-  selector: 'app-peliculas',
-  templateUrl: './peliculas.component.html',
-  styleUrls: ['./peliculas.component.css']
+  selector: 'app-opinion',
+  templateUrl: './opinion.component.html',
+  styleUrls: ['./opinion.component.css']
 })
-export class PeliculasComponent implements OnInit {
-  
+export class OpinionComponent implements OnInit {
+
   constructor(private peliculaService:PeliculaService,private opinionService:OpinionService,private rutaActiva: ActivatedRoute) { }
   peliculas: Array<any> = [];
   opiniones: Array<any> = [];
@@ -25,7 +25,7 @@ export class PeliculasComponent implements OnInit {
   cargarPeliculas(){
     this.rutaActiva.params.subscribe(
       (params: Params)=>{
-        this.peliculaService.obtenerPeliculas(params['id']).subscribe(data=>{
+        this.peliculaService.filtrarPeliculas(params['id']).subscribe(data=>{
           
           this.peliculas = data as Array<any>;
           
@@ -41,3 +41,8 @@ export class PeliculasComponent implements OnInit {
     })
   }
 }
+
+
+
+
+
